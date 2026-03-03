@@ -1,10 +1,22 @@
 package main
 
-import "github.com/luques/golang-orientacao-objetos/contas"
+import (
+	"github.com/luques/golang-orientacao-objetos/clientes"
+	"github.com/luques/golang-orientacao-objetos/contas"
+)
 
 func main() {
-	contaDestino := contas.ContaCorrente{Saldo: 10, NumeroConta: 12345}
-	contaOrigem := contas.ContaCorrente{Saldo: 20, NumeroConta: 54321}
+	lucas := clientes.Titular{
+		Nome:      "Lucas",
+		Cpf:       "123.456.789-00",
+		Profissao: "Desenvolvedor",
+	}
 
-	contaOrigem.Transferir(5, &contaDestino)
+	contaLucas := contas.ContaCorrente{
+		Saldo:       1000,
+		NumeroConta: 123456,
+		Titular:     lucas,
+	}
+
+	print(contaLucas)
 }
