@@ -7,9 +7,9 @@ import (
 )
 
 type ContaCorrente struct {
-	saldo       float64
-	NumeroConta int
 	Titular     clientes.Titular
+	NumeroConta int
+	saldo       float64
 }
 
 func (c *ContaCorrente) Transferir(valorTransferencia float64, contaDestino *ContaCorrente) bool {
