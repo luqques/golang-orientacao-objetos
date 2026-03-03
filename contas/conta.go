@@ -1,10 +1,15 @@
 package contas
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/luques/golang-orientacao-objetos/clientes"
+)
 
 type ContaCorrente struct {
 	Saldo       float64
 	NumeroConta int
+	Titular     clientes.Titular
 }
 
 func (c *ContaCorrente) Transferir(valorTransferencia float64, contaDestino *ContaCorrente) bool {
