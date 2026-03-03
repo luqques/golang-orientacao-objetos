@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/luques/golang-orientacao-objetos/clientes"
 	"github.com/luques/golang-orientacao-objetos/contas"
 )
@@ -13,10 +15,12 @@ func main() {
 	}
 
 	contaLucas := contas.ContaCorrente{
-		Saldo:       1000,
 		NumeroConta: 123456,
 		Titular:     lucas,
 	}
 
-	print(contaLucas)
+	contaLucas.Depositar(100)
+	contaLucas.Sacar(30)
+
+	fmt.Print(contaLucas.ObterSaldo())
 }

@@ -35,3 +35,7 @@ func (c *ContaCorrente) Sacar(valorSaque float64) bool {
 	fmt.Printf("Conta %v realizou um saque de %v reais, saldo restante: %v reais.\n", c.NumeroConta, valorSaque, c.saldo)
 	return true
 }
+
+func (c *ContaCorrente) ObterSaldo() float64 {
+	return c.saldo
+}
